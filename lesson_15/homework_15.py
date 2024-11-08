@@ -20,3 +20,4 @@ class Rhombus:
 # Example usage
 rhombus = Rhombus(20, 50)
 print(rhombus)
+
