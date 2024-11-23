@@ -2,21 +2,16 @@ from __future__ import unicode_literals
 import sys, glob, csv, pytz, shutil
 from os import listdir, getcwd, access, W_OK
 from os.path import abspath, join, dirname, split, exists, isfile, isdir
-
 sys.path.append("/randominfo/")
 from random import randint, choice, sample, randrange
 from datetime import datetime
 from PIL import Image, ImageDraw, ImageFont
 from math import ceil
-
 __title__ = 'randominfo'
 __version__ = '2.0.2'
 __author__ = 'Bhuvan Gandhi'
 __license__ = 'MIT'
-
 full_path = lambda filename: abspath(join(dirname(__file__), filename))
-
-
 def get_id(length=6, seq_number=None, step=1, prefix=None, postfix=None):
     generated_id = ""
     if seq_number == None:
@@ -33,8 +28,6 @@ def get_id(length=6, seq_number=None, step=1, prefix=None, postfix=None):
     if postfix != None:
         generated_id += postfix
     return generated_id
-
-
 def get_first_name(gender=None):
     firstNameFile = csv.reader(open(full_path('data.csv'), 'r'))
     filteredData = []
@@ -56,8 +49,6 @@ def get_first_name(gender=None):
         else:
             raise ValueError("Enter gender male or female.")
     return choice(filteredData)[0]
-
-
 def get_last_name():
     lastNameFile = csv.reader(open(full_path('data.csv'), 'r'))
     filteredData = []
@@ -65,8 +56,6 @@ def get_last_name():
         if data[1] != '':
             filteredData.append(data[1])
     return choice(filteredData)
-
-
 def get_gender(first_name):
     firstNameFile = csv.reader(open(full_path('data.csv'), 'r'))
     gender = ""
@@ -75,8 +64,6 @@ def get_gender(first_name):
             gender = data[2]
             break
     return gender
-
-
 def get_country(first_name=None):
     countryFile = csv.reader(open(full_path('data.csv'), 'r'))
     country = ""
@@ -94,12 +81,8 @@ def get_country(first_name=None):
                 filteredData.append(data[12])
         country = choice(filteredData)
     return country
-
-
 def get_full_name(gender=None):
     return get_first_name(gender) + " " + get_last_name()
-
-
 def get_otp(length=6, digit=True, alpha=True, lowercase=True, uppercase=True):
     lwrChars = "qwertyuioplkjhgfdsazxcvbnm"
     uprChars = "QWERTYUIOPLKJHGFDSAZXCVBNM"
@@ -119,25 +102,18 @@ def get_otp(length=6, digit=True, alpha=True, lowercase=True, uppercase=True):
         return otp
     else:
         raise ValueError("From parameters 'digit' and 'alpha' anyone must be True.")
-
-
 def get_formatted_datetime(outFormat, strDate, strFormat="%d-%m-%Y %H:%M:%S"):
     return datetime.strptime(strDate, strFormat).strftime(outFormat)
-
-
 def get_email(prsn=None):
     domains = ["gmail", "yahoo", "hotmail", "express", "yandex", "nexus", "online", "omega", "institute", "finance",
                "company", "corporation", "community"]
     extentions = ['com', 'in', 'jp', 'us', 'uk', 'org', 'edu', 'au', 'de', 'co', 'me', 'biz', 'dev', 'ngo', 'site',
                   'xyz', 'zero', 'tech']
-
     if prsn == None:
         prsn = Person()
-
     c = randint(0, 2)
     dmn = '@' + choice(domains)
     ext = choice(extentions)
-
     if c == 0:
         email = prsn.first_name + get_formatted_datetime("%Y", prsn.birthdate, "%d %b, %Y") + dmn + "." + ext
     elif c == 1:
@@ -145,8 +121,6 @@ def get_email(prsn=None):
     else:
         email = prsn.first_name + get_formatted_datetime("%y", prsn.birthdate, "%d %b, %Y") + dmn + "." + ext
     return email
-
-
 def random_password(length=8, special_chars=True, digits=True):
     spec_chars = ['!', '@', '#', '$', '%', '^', '&', '*']
     alpha = "QWERTYUIOPLKJHGFDSAZXCVBNMmnbvcxzasdfghjklpoiuytrewq"
@@ -163,11 +137,8 @@ def random_password(length=8, special_chars=True, digits=True):
             chars += str(randint(0, 9))
     for _ in range(length - (dig_char_len + spec_char_len)):
         chars += choice(alpha[randint(0, len(alpha) - 1)])
-
     paswd = ''.join(sample(chars, len(chars)))
     return paswd
-
-
 def get_phone_number(country_code=True):
     phone = ""
     if country_code == True:
@@ -181,8 +152,6 @@ def get_phone_number(country_code=True):
         else:
             phone += str(randint(0, 9))
     return phone
-
-
 def get_alphabetic_profile_img(char, filePath, imgName, charColor=None, bgColor=None):
     chars = "qwertyuioplkjhgfdsazxcvbnmQAZXSWEDCVFRTGBNHYUJMKLIOP0123456789 ,.+=-_()[]{}"
     if all((c in chars) for c in imgName):
@@ -211,8 +180,6 @@ def get_alphabetic_profile_img(char, filePath, imgName, charColor=None, bgColor=
         raise OSError(
             "Invalid image name. Image name must contains characher including digits, alphabets, white space, dot, comma, ( ) [ ] { } _ + - =.")
     return filePath
-
-
 def get_face_profile_img(filePath, imgName, gender=None):
     dir_name, file_name = split(abspath(__file__))
     chars = "qwertyuioplkjhgfdsazxcvbnmQAZXSWEDCVFRTGBNHYUJMKLIOP0123456789 ,.+=-_()[]{}"
@@ -232,16 +199,10 @@ def get_face_profile_img(filePath, imgName, gender=None):
     else:
         raise OSError(
             "Invalid image name. Image name must contains characher including digits, alphabets, white space, dot, comma, ( ) [ ] { } _ + - =.")
-
-
 startRange = datetime(1970, 1, 1, 0, 0, 0, 0, pytz.UTC)
 endRange = datetime.today()
-
-
 def get_today(_format="%d-%m-%Y %H:%M:%S"):
     return datetime.today().strftime(_format)
-
-
 def get_date(tstamp=None, _format="%d %b, %Y"):
     if tstamp == None:
         startTs = startRange.timestamp()
@@ -251,8 +212,6 @@ def get_date(tstamp=None, _format="%d %b, %Y"):
         if type(tstamp).__name__ != 'int':
             raise ValueError("Timestamp must be an integer.")
     return datetime.utcfromtimestamp(tstamp).strftime(_format)
-
-
 def get_birthdate(startAge=None, endAge=None, _format="%d %b, %Y"):
     startRange = datetime.today()
     endRange = datetime(1970, 1, 1, 0, 0, 0, 0, pytz.UTC)
@@ -277,25 +236,20 @@ def get_birthdate(startAge=None, endAge=None, _format="%d %b, %Y"):
     startTs = startRange.timestamp()
     endTs = endRange.timestamp()
     return datetime.fromtimestamp(randrange(int(endTs), int(startTs))).strftime(_format)
-
-
 def get_address():
     full_addr = []
     addrParam = ['street', 'landmark', 'area', 'city', 'state', 'country', 'pincode']
+    allAddrs = []
     for i in range(5, 12):
-        addrFile = csv.reader(open(full_path('data.csv'), 'r'))
-        allAddrs = []
-        for addr in addrFile:
-            try:
-                if addr[i] != '':
-                    allAddrs.append(addr[i])
-            except:
-                pass
-        full_addr.append(choice(allAddrs))
+        with open(full_path('data.csv'), 'r', newline='') as csvfile:
+            reader = csv.reader(csvfile)
+            for row in list(reader):
+                if i < len(row):
+                    if row[i] != '':
+                        allAddrs.append(row[i])
+    full_addr.append(choice(allAddrs))
     full_addr = dict(zip(addrParam, full_addr))
     return full_addr
-
-
 def get_hobbies():
     hobbiesFile = csv.reader(open(full_path('data.csv'), 'r'))
     allHobbies = []
@@ -306,8 +260,6 @@ def get_hobbies():
     for _ in range(1, randint(2, 6)):
         hobbies.append(choice(allHobbies))
     return hobbies
-
-
 class Person:
     def __init__(self, gender=None):
         firstName = get_first_name(gender)
@@ -323,7 +275,6 @@ class Person:
         self.hobbies = get_hobbies()
         self.address = get_address()
         self.customAttr = {}
-
     def set_attr(self, attr_name, value=None):
         if attr_name.isalnum():
             if attr_name[0].isalpha():
@@ -333,7 +284,6 @@ class Person:
                 raise ValueError("First character of attribute must be an alphabet.")
         else:
             raise ValueError("Attribute name only contains alphabets and digits.")
-
     def get_attr(self, attr_name):
         if attr_name.isalnum():
             if attr_name[0].isalpha():
@@ -345,7 +295,6 @@ class Person:
                 raise ValueError("First character of attribute must be an alphabet.")
         else:
             raise ValueError("Attribute name only contains alphabets and digits.")
-
     def get_details(self):
         return {
             "first_name": self.first_name,
@@ -361,8 +310,6 @@ class Person:
             "address": self.address,
             "other_attr": self.customAttr
         }
-
-
 '''
 REFERENCE:
 http://www.first-names-meanings.com/country-indian-names.html
