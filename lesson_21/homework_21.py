@@ -1,50 +1,54 @@
 import logging
-import time
-from pathlib import Path
-
-def select_log_by_key(path:Path, key:str):
-
-    with open(path, 'r') as log:
-        content = log.readlines()
-
-    selected_log = [x for x in content if x.__contains__(key)]
-
-    return selected_log
-
-def analysis_and_logging(log_selected:list, filename):
-    time_temp = []
-    time_format = "%H:%M:%S"
-
-    start_index = log_selected[0].find('Timestamp ') + 10
-    end_index = start_index + 8
-
-    for s in range(len(log_selected)):
-        time_str = log_selected[s][start_index:end_index]
-        time_obj = time.strptime(time_str, time_format)
-        time_temp.append(time_obj)
-
-        if s > 0 and s < len(log_selected):
-            time_difference = time_temp[s][5] - time_temp[s-1][5]
-            if abs(time_difference) in range(31,34):
-                logging.basicConfig(level=logging.WARNING, filename=filename, filemode="w+")
-                logging.warning(
-                    f'current log item: {log_selected[s]} previous log item: {log_selected[s - 1]} difference: {abs(time_difference)} sec')
-
-            elif abs(time_difference) > 33:
-                logging.basicConfig(level=logging.ERROR, filename=filename, filemode="w+")
-                logging.error(
-                    f'current log item: {log_selected[s]}previous log item:  {log_selected[s - 1]}difference too much: {abs(time_difference)} sec')
-
-    return open(filename, mode='r')
+from datetime import datetime
 
 
+logging.basicConfig(
+    filename='hb_test.log',
+    level=logging.INFO,
+    format='%(asctime)s - %(message)s',
+    force=True
+)
+logger = logging.getLogger("log_event")
 
-log_file_full = Path('hblog.txt')
-key = 'Key TSTFEED0300|7E3E|0400'
-log_file_selected = 'hb_test.log'
 
-list_selected_items = select_log_by_key(log_file_full, key)
+def check_logs(logs_to_read):
 
-file_to_read = analysis_and_logging(list_selected_items, log_file_selected)
+    with open(logs_to_read, 'r') as log_file:
+        content = log_file.read()
+        lines = content.splitlines()
+        previous_date = None
 
-print(file_to_read.read())
+        for line in lines:
+            if "Key TSTFEED0300|7E3E|0400" in line:
+                if "Timestamp " in line:
+                    timestamp_str = line.split("Timestamp ")[1].split(" ")[0]
+                    date = datetime.strptime(timestamp_str, "%H:%M:%S")
+
+                    if not previous_date:
+                        previous_date = date
+                        continue
+
+                    diff_time = previous_date - date
+                    write_new_logs(diff_time.total_seconds(), date, line)
+
+                    previous_date = date
+
+
+def write_new_logs(dif_time, date, line):
+
+    msg = f"[HEARTBEAT = {dif_time}] [Time = {date.strftime('%H:%M:%S')}] Log = {line}"
+    if 31 <= dif_time < 33:
+        logger.warning(f"WARNING {msg}")
+    elif dif_time >= 33:
+        logger.error(f"ERROR {msg}")
+
+
+if __name__ == "__main__":
+    check_logs("hblog.txt")
+
+    with open("hb_test.log", 'r') as log_file:
+        content = log_file.read()
+        if not content:
+            print("Log file is empty! Make sure there are relevant entries in hblog.txt")
+        else:
+            print("Log file analysis completed. Check hb_test.log for details.")
