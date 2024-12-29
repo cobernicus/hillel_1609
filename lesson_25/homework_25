@@ -1,0 +1,150 @@
+Xpaths
+
+Initial page
+https://qauto2.forstudy.space/ while user is logged out
+
+1. Logo button 'Hillelauto' in header menu
+//a[@class='header_logo' and @href='/']
+
+2. 'Home' button in header menu
+//a[text()='Home']
+
+3. 'About' button in header menu
+//button[text()='About']
+
+4. 'Contacts' button in header menu
+//button[@appscrollto='contactsSection' and text()='Contacts']
+
+5. 'Guest lig in' button in header menu
+//button[@class='header-link -guest' and text()='Guest log in']
+
+6. 'Sign in' button in header menu
+//button[@class='btn btn-outline-white header_signin' and text()='Sign In']
+
+7. 'Play' button in the frame with promo video from Hillel
+//button[@class="ytp-large-play-button ytp-button ytp-large-play-button-red-bg"]
+
+8. 'Смотреть' button in the frame with promo video from Hillel
+//button[@class="ytp-watch-later-button ytp-button ytp-show-watch-later-title"]
+
+9. 'Поделиться' button in the frame with promo video from Hillel
+//button[@class="ytp-button ytp-copylink-button ytp-show-copylink-title" or @title='Копировать ссылку']
+
+10. 'You tube' button in the frame with promo video from Hillel
+//a[ @class="ytp-watermark yt-uix-sessionlink" and @href='https://www.youtube.com/watch?v=znjjC0Iw8Wc']
+
+11. 'IT Hillel' button in the footer menu
+//a[@href="https://ithillel.ua"]
+
+12. 'Support email' button in the footer menu
+//a[text()="support@ithillel.ua"]
+
+
+
+'Log in' modal window that opens by click on 'Sign In' button
+1. 'X' button (close)
+//button[@aria-label="Close"]
+
+2. 'Email' input field
+//input[@name="email"]
+
+3. 'Password' input field
+//input[@name="password" and @type="password"]
+
+4. 'Remember' check-box
+//input[@name="remember" and @type="checkbox"]
+
+5. 'Forgot password' button
+//button[text()="Forgot password"]
+
+6. 'Registration' button
+//button[text()="Registration"]
+
+7. 'Login' button
+//button[@type="button" and text()="Login"]
+
+Page that opens after click on 'Guest log in' button
+https://qauto2.forstudy.space/panel/garage
+
+1. 'My profile' button in header
+//button[@id="userNavDropdown"]
+
+2. 'Add car' button in body
+//button[text()="Add car"]
+
+3. 'Fuel expenses' button in side-bar menu
+//a[@class="btn btn-white btn-sidebar sidebar_btn" and @href="/panel/expenses"]
+
+4. 'Instructions' button in side-bar menu
+//a[@class="btn btn-white btn-sidebar sidebar_btn" and @href="/panel/instructions"]
+
+5.1 'Log out' button in side-bar menu (option 1)
+//a[text()=' Log out ']
+
+5.2 'Log out' button in side-bar menu (option 2)
+//a[@class='btn btn-link text-danger btn-sidebar sidebar_btn']
+
+6. Hillel logo in the footer
+//a[@class='footer_logo']/*[local-name()='svg']
+
+
+CSS-selectors
+
+Page that is open after click on 'Instuction' side-menu button
+https://qauto2.forstudy.space/panel/instructions
+
+1. 'Auto brand' input field
+#brandSelectDropdown
+
+2. 'Auto model' input field
+#modelSelectDropdown
+
+
+3.'Search' button
+button.instructions-search-controls_search
+
+4. List that contains 5 items with reference in case brand='Ford', model='Focus'
+p.instruction-link_description
+
+
+5. List that contains 5 buttons Download with reference for items in case brand='Ford', model='Focus'
+a.instruction-link_download
+
+
+'Garage' page https://qauto2.forstudy.space/panel/garage
+
+1. 'Add a car' button
+button.btn-primary
+
+
+'Add a car' modal window that opens by click on 'Add car' button from 'Garage' page https://qauto2.forstudy.space/panel/garage
+
+1. button 'x' (close) window
+span[_ngcontent-gje-c67]
+
+2 'Brand' dropdown list
+2.1
+select[name='carBrandId']
+2.2
+#addCarBrand
+
+
+#3 'Model'dropdown list for field )
+select[name='carModelId']
+or
+#addCarModel
+
+4 'Mileage' input field
+4.1
+input[type='number']
+4.2
+input[name='mileage']
+4.3
+#addCarMileage
+
+5. 'Cancel' button
+button[type='button'].btn-secondary
+
+6. 'Add' button
+button[type='button'].btn-primary
+
