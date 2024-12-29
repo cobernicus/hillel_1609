@@ -1,0 +1,102 @@
+15:16:29,499 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+15:16:29,502 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=brand&limit=3 HTTP/11" 200 282
+15:16:29,505 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+15:16:29,508 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=price&limit=5 HTTP/11" 200 476
+15:17:38,334 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+15:17:38,337 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=brand&limit=3 HTTP/11" 200 282
+15:17:38,340 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+15:17:38,342 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=price&limit=5 HTTP/11" 200 476
+15:22:49,362 root INFO Successful authentication
+16:14:51,42 root INFO Successful authentication
+16:14:51,46 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:14:51,48 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=price&limit=10 HTTP/11" 200 954
+16:14:51,49 root INFO Successful Get request
+16:14:51,52 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:14:51,54 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=brand&limit=3 HTTP/11" 200 282
+16:14:51,54 root INFO Successful Get request
+16:14:51,57 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:14:51,59 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=price&limit=5 HTTP/11" 200 476
+16:14:51,60 root INFO Successful Get request
+16:21:43,493 root INFO Successful authentication
+16:21:43,498 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:21:43,500 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=price&limit=10 HTTP/11" 200 954
+16:21:43,500 root INFO Successful Get request
+16:21:43,504 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:21:43,505 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=brand&limit=3 HTTP/11" 200 282
+16:21:43,506 root INFO Successful Get request
+16:21:43,602 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:21:43,604 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=price&limit=5 HTTP/11" 200 476
+16:21:43,605 root INFO Successful Get request
+16:22:14,923 root INFO Successful authentication
+16:22:14,928 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:22:14,930 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=price&limit=10 HTTP/11" 200 954
+16:22:14,931 root INFO Successful Get request
+16:22:14,934 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:22:14,937 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=brand&limit=3 HTTP/11" 200 282
+16:22:14,937 root INFO Successful Get request
+16:22:14,940 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:22:14,943 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=price&limit=5 HTTP/11" 200 476
+16:22:14,944 root INFO Successful Get request
+16:23:13,162 root INFO Successful authentication
+16:23:13,166 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:23:13,169 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=price&limit=10 HTTP/11" 200 954
+16:23:13,169 root INFO Successful Get request
+16:23:13,173 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:23:13,175 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=brand&limit=3 HTTP/11" 200 282
+16:23:13,176 root INFO Successful Get request
+16:23:13,252 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:23:13,254 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=price&limit=5 HTTP/11" 200 476
+16:23:13,255 root INFO Successful Get request
+16:24:28,578 root INFO Successful authentication
+16:24:28,583 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:24:28,586 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=price&limit=10 HTTP/11" 200 954
+16:24:28,586 root INFO Successful Get request
+16:24:28,590 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:24:28,592 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=brand&limit=3 HTTP/11" 200 282
+16:24:28,592 root INFO Successful Get request
+16:24:28,596 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:24:28,598 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=price&limit=5 HTTP/11" 200 476
+16:24:28,598 root INFO Successful Get request
+16:25:26,328 root INFO Successful authentication
+16:25:26,333 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:25:26,335 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=price&limit=10 HTTP/11" 200 954
+16:25:26,336 root INFO Successful Get request
+16:25:26,339 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:25:26,341 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=brand&limit=3 HTTP/11" 200 282
+16:25:26,341 root INFO Successful Get request
+16:25:26,345 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:25:26,348 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=price&limit=5 HTTP/11" 200 476
+16:25:26,348 root INFO Successful Get request
+16:28:37,573 root INFO Successful authentication
+16:28:37,577 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:28:37,580 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars HTTP/11" 200 2389
+16:28:37,580 root INFO Successful Get request
+16:28:37,584 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:28:37,586 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=brand&limit=3 HTTP/11" 200 282
+16:28:37,586 root INFO Successful Get request
+16:28:37,589 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:28:37,591 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=price&limit=5 HTTP/11" 200 476
+16:28:37,591 root INFO Successful Get request
+16:31:34,380 root INFO Successful authentication
+16:31:34,555 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:31:34,558 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=brand&limit=3 HTTP/11" 200 282
+16:31:34,559 root INFO Successful Get request
+16:31:34,563 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:31:34,565 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=price&limit=5 HTTP/11" 200 476
+16:31:34,565 root INFO Successful Get request
+16:33:32,669 root INFO Successful authentication
+16:33:32,673 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:33:32,675 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=price&limit=2 HTTP/11" 200 197
+16:33:32,675 root INFO Successful Get request
+16:33:32,680 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:33:32,682 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=engine_volume&limit=3 HTTP/11" 200 286
+16:33:32,682 root INFO Successful Get request
+16:33:32,686 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:33:32,688 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=year&limit=4 HTTP/11" 200 380
+16:33:32,688 root INFO Successful Get request
+16:33:32,691 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:33:32,693 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=brand&limit=3 HTTP/11" 200 282
+16:33:32,694 root INFO Successful Get request
+16:33:32,697 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:8080
+16:33:32,699 urllib3.connectionpool DEBUG http://127.0.0.1:8080 "GET /cars?sort_by=price&limit=5 HTTP/11" 200 476
+16:33:32,700 root INFO Successful Get request
